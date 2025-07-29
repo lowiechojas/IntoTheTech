@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Arduino",
+    "slug": "arduino",
+    "description": "Get started with microcontrollers and circuits.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg"
+  },
+  {
+    "id": 2,
+    "title": "Raspberry Pi",
+    "slug": "raspberry-pi",
+    "description": "Build your first Linux-based IoT project.",
+    "image": "https://upload.wikimedia.org/wikipedia/en/c/cb/Raspberry_Pi_Logo.svg"
+  }
+]
