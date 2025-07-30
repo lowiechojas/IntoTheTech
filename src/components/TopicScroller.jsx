@@ -42,7 +42,7 @@ const TopicScroller = () => {
             {topics.map((topic) => (
               <Link key={topic.id} to={`/electronics/${topic.slug}`}>
                 <div
-                  className="w-auto h-[20vh] md:w-[10vw] md:h-[35vh] bg-white p-4 rounded-lg shadow-lg shadow-cyan-200 
+                  className="w-auto h-[10vh] lg:w-[10vw] lg:h-[30vh]  bg-white p-4 rounded-lg shadow-lg shadow-cyan-200 
                             transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer shrink-0"
                 >
                   <div className="flex flex-col items-center">
