@@ -1,6 +1,4 @@
 import React from 'react'
-import bgElec from '../assets/electronics.png'
-import bgwebdev from '../assets/webdev.PNG'
 import TopicItem from '../components/TopicItem'
 import TopicScroller from '../components/TopicScroller'
 import WebdevTile from '../components/WebdevTile'
