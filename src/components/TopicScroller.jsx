@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react'; // or use your own icons
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import topics from '../data/topics.json';
 import { Link } from 'react-router-dom';
 
 const TopicScroller = () => {
   const [startIndex, setStartIndex] = useState(0);
-  const visibleCount = 7;
+  const visibleCount = 5; // or 7 based on your original layout
 
   const handlePrev = () => {
     if (startIndex > 0) setStartIndex(startIndex - 1);
@@ -17,11 +17,10 @@ const TopicScroller = () => {
     }
   };
 
-  const visibleTopics = topics.slice(startIndex, startIndex + visibleCount);
+  const cardWidth = 150; // Adjust if needed (Tailwind's w-50 = ~200px, adjust accordingly)
 
   return (
-    <div className="w-full max-w-[100vw] mx-auto py-10 px-4">
-
+    <div className="w-full overflow-hidden max-w-screen-xl mx-auto py-10 px-4">
       <div className="flex items-center justify-center gap-4">
         {/* Left Arrow */}
         <button
@@ -32,29 +31,38 @@ const TopicScroller = () => {
           <ChevronLeft size={24} />
         </button>
 
-        {/* Cards */}
-        <div className="flex gap-6 h-[20vh] sm:h-auto overflow-hidden w-full justify-center">
-          {visibleTopics.map((topic, index) => (
-            <Link
-          key={topic.id}
-          to={`/electronics/${topic.slug}`}
+        {/* Scrollable Container */}
+        <div className="relative w-full overflow-hidden">
+          <div
+            className="flex gap-6 transition-transform duration-500 ease-in-out"
+            style={{
+              transform: `translateX(-${startIndex * (cardWidth + 24)}px)`, // 24 is the gap-6
+            }}
           >
-            <div
-              key={topic.id}
-              className="w-50 shrink-0 p-2 h-[35vh] rounded-xl overflow-hidden bg-white text-black shadow-md hover:shadow-xl transition-transform duration-300 cursor-pointer"
-            >
-              <img
-                src={topic.image}
-                alt={topic.title}
-                className="w-auto  sm:h-[20vh] object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-xl font-bold">{topic.title}</h3>
-                <p className="text-sm text-gray-600 line-clamp-4">{topic.description}</p>
-              </div>
-            </div>
-            </Link>
-          ))}
+            {topics.map((topic) => (
+              <Link key={topic.id} to={`/electronics/${topic.slug}`}>
+                <div
+                  className="w-[10vw] h-[35vh] bg-white p-4 rounded-lg shadow-lg shadow-cyan-200 
+                            transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer shrink-0"
+                >
+                  <div className="flex flex-col items-center">
+                    <div>
+                        <img
+                          src={topic.image}
+                          alt={topic.title}
+                          className="w-[10vw] h-auto"
+                        />
+                    </div>
+
+                    <div className='flex items-center justify-around'>
+                        <h2 className="font-bold text-lg">{topic.title}</h2>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 text-sm line-clamp-2">{topic.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* Right Arrow */}

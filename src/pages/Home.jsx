@@ -20,7 +20,7 @@ const Home = () => {
 
         <div className='flex flex-col items-center justify-center w-full h-auto bg-black opacity-50 m-2'>
           <div className='flex'>
-          <WebdevTile />
+                    <WebdevTile />
           </div>
         </div>
 
