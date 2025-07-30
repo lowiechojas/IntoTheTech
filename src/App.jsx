@@ -10,12 +10,14 @@ import ProgrammingLanguage from './pages/ProgrammingLanguage'
 import Ecommerce from './pages/Ecommerce'
 import Contact from './pages/Contact'
 import SearchPage from './components/SearchPage'
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
         <Routes>
           <Route path="/search" element={<SearchPage/>}/>

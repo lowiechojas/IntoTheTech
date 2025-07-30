@@ -31,6 +31,12 @@ const Home = () => {
           </div>
         </div>
 
+        <div className='flex flex-col items-center justify-center w-full h-auto bg-amber opacity-50 m-2'>
+          <div className='flex text-black'>
+                    <h1>eCommerce</h1>
+          </div>
+        </div>
+
     </div>
   )
 }
