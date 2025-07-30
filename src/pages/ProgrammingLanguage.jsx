@@ -1,10 +1,10 @@
 import React from 'react'
+import ProgData from '../data/programming.json';
+import TopicDetailLayout from '../components/TopicDetailLayout';
 
 const ProgrammingLanguage = () => {
   return (
-    <div>
-        <h1>Programming Language</h1>
-    </div>
+    <TopicDetailLayout data={ProgData} routePrefix="/programming" />
   )
 }
 

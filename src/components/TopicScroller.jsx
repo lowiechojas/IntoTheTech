@@ -33,7 +33,7 @@ const TopicScroller = () => {
         </button>
 
         {/* Cards */}
-        <div className="flex gap-6 overflow-hidden w-full justify-center">
+        <div className="flex gap-6 h-[20vh] sm:h-auto overflow-hidden w-full justify-center">
           {visibleTopics.map((topic, index) => (
             <Link
           key={topic.id}
