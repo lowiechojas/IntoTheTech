@@ -20,7 +20,7 @@ const TopicScroller = () => {
   const cardWidth = 150; // Adjust if needed (Tailwind's w-50 = ~200px, adjust accordingly)
 
   return (
-    <div className="w-full overflow-hidden max-w-screen-xl mx-auto py-10 px-4">
+    <div className="w-full overflow-hidden max-w-screen-xl mx-auto py-10 px-4 md:mr-30 md:ml-30">
       <div className="flex items-center justify-center gap-4">
         {/* Left Arrow */}
         <button
@@ -42,7 +42,7 @@ const TopicScroller = () => {
             {topics.map((topic) => (
               <Link key={topic.id} to={`/electronics/${topic.slug}`}>
                 <div
-                  className="w-[10vw] h-[35vh] bg-white p-4 rounded-lg shadow-lg shadow-cyan-200 
+                  className="w-auto h-[20vh] md:w-[10vw] md:h-[35vh] bg-white p-4 rounded-lg shadow-lg shadow-cyan-200 
                             transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer shrink-0"
                 >
                   <div className="flex flex-col items-center">

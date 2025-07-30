@@ -4,6 +4,7 @@ import bgwebdev from '../assets/webdev.PNG'
 import TopicItem from '../components/TopicItem'
 import TopicScroller from '../components/TopicScroller'
 import WebdevTile from '../components/WebdevTile'
+import Proglang from '../components/Proglang'
 
 const Home = () => {
   return (
@@ -21,6 +22,12 @@ const Home = () => {
         <div className='flex flex-col items-center justify-center w-full h-auto bg-black opacity-50 m-2'>
           <div className='flex'>
                     <WebdevTile />
+          </div>
+        </div>
+
+        <div className='flex flex-col items-center justify-center w-full h-auto bg-amber opacity-50 m-2'>
+          <div className='flex'>
+                    <Proglang />
           </div>
         </div>
 
